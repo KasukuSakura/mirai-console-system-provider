@@ -1,0 +1,52 @@
+一个包含了各种奇怪的库的项目
+
+# Dependencies
+
+| Group   | Name  | Version   |
+| ------  | ----- | --------- |
+| com.google.code.gson | gson | 2.8.7 |
+| com.google.guava | guava | 30.1.1-jre |
+| com.zaxxer | HikariCP | 5.0.0 |
+| org.mongodb | mongo-java-driver | 3.12.9 |
+| org.yaml | snakeyaml | 1.28 |
+| org.postgresql | postgresql | 42.2.19 |
+| mysql | mysql-connector-java | 8.0.26 |
+| com.h2database | h2 | 1.4.200 |
+| org.xerial | sqlite-jdbc | 3.36.0.1 |
+| redis.clients | jedis | 3.6.3 |
+| com.rabbitmq | amqp-client | 5.13.0 |
+| org.apache.commons | commons-pool2 | 2.10.0 |
+| org.apache.commons | commons-text | 1.9 |
+| org.apache.commons | commons-lang3 | 3.12.0 |
+| org.apache.commons | commons-collections4 | 4.4 |
+| org.ktorm | ktorm-core | 3.4.1 |
+| org.hibernate | hibernate-core | 5.5.4.Final |
+| org.antlr | antlr4-runtime | 4.9.2 |
+| org.jetbrains.kotlin | kotlin-reflect | 1.4.32 |
+| org.jetbrains.kotlin | kotlin-stdlib | 1.5.10 |
+| com.google.guava | failureaccess | 1.0.1 |
+| com.google.guava | listenablefuture | 9999.0-empty-to-avoid-conflict-with-guava |
+| com.google.code.findbugs | jsr305 | 3.0.2 |
+| org.checkerframework | checker-qual | 3.8.0 |
+| com.google.errorprone | error_prone_annotations | 2.5.1 |
+| com.google.j2objc | j2objc-annotations | 1.3 |
+| org.slf4j | slf4j-api | 1.7.31 |
+| com.google.protobuf | protobuf-java | 3.11.4 |
+| org.hibernate.common | hibernate-commons-annotations | 5.1.2.Final |
+| org.jboss.logging | jboss-logging | 3.4.2.Final |
+| javax.persistence | javax.persistence-api | 2.2 |
+| org.javassist | javassist | 3.27.0-GA |
+| net.bytebuddy | byte-buddy | 1.11.8 |
+| antlr | antlr | 2.7.7 |
+| org.jboss.spec.javax.transaction | jboss-transaction-api_1.2_spec | 1.1.1.Final |
+| org.jboss | jandex | 2.2.3.Final |
+| com.fasterxml | classmate | 1.5.1 |
+| org.glassfish.jaxb | jaxb-runtime | 2.3.1 |
+| javax.xml.bind | jaxb-api | 2.3.1 |
+| javax.activation | javax.activation-api | 1.2.0 |
+| org.jetbrains | annotations | 13.0 |
+| org.jetbrains.kotlin | kotlin-stdlib-common | 1.5.10 |
+| org.glassfish.jaxb | txw2 | 2.3.1 |
+| com.sun.istack | istack-commons-runtime | 3.0.7 |
+| org.jvnet.staxex | stax-ex | 1.8 |
+| com.sun.xml.fastinfoset | FastInfoset | 1.2.15 |

@@ -1,0 +1,68 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'io.github.kasukusakura'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'net.mamoe:mirai-console:2.7-M1'
+    compileOnly 'net.mamoe:mirai-core-api:2.7-M1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    api 'com.google.code.gson:gson:2.8.7'
+    api 'com.google.guava:guava:30.1.1-jre'
+    api 'com.zaxxer:HikariCP:5.0.0'
+    api 'org.mongodb:mongo-java-driver:3.12.9'
+    api 'org.yaml:snakeyaml:1.28'
+    api 'org.postgresql:postgresql:42.2.19'
+    api 'mysql:mysql-connector-java:8.0.26'
+    api 'com.h2database:h2:1.4.200'
+    api 'org.xerial:sqlite-jdbc:3.36.0.1'
+    api 'redis.clients:jedis:3.6.3'
+    api 'com.rabbitmq:amqp-client:5.13.0'
+    api 'org.apache.commons:commons-pool2:2.10.0'
+    api 'org.apache.commons:commons-lang3:3.12.0'
+    api 'org.apache.commons:commons-text:1.9'
+    api 'org.apache.commons:commons-collections4:4.4'
+    api 'org.ktorm:ktorm-core:3.4.1'
+    api 'org.hibernate:hibernate-core:5.5.4.Final'
+    api 'org.antlr:antlr4-runtime:4.9.2'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+shadowJar {
+    archiveFileName.set('mirai-console-system-provider.all.jar')
+    dependencyFilter.exclude { dep ->
+        def mod = dep.moduleGroup + ':' + dep.moduleName
+        if (dep.moduleGroup == 'org.jetbrains.kotlin') return true
+        if (mod.startsWith('org.jetbrains.kotlinx:kotlinx-coroutines')) return true
+        return false
+    }
+    exclude 'module-info.class'
+}
+
+tasks.create('echoDependencies') {
+    doFirst {
+        println '| Group   | Name  | Version   |'
+        println '| ------  | ----- | --------- |'
+        def rt = configurations.runtimeClasspath
+        rt.resolvedConfiguration.resolvedArtifacts.each { dep ->
+            def id = dep.id.componentIdentifier
+            println '| ' + id.displayName.replace(':', ' | ') + ' |'
+        }
+    }
+}
